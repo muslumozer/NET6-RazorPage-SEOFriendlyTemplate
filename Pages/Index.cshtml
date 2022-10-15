@@ -1,0 +1,184 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = string.Format("Home page {0}", DateTime.Now.Year.ToString());
+    ViewData["Canonical"] = "https://www.localhost.com/";
+
+}
+
+@section header {
+    <meta name="description" content="Lorem Ipsum" />
+
+    <script type="application/ld+json">
+        {
+          "@@context": "https://schema.org",
+          "@@type": "Organization",
+          "name": "Localhost",
+          "alternateName": "Alternate Localhost",
+          "url": "https://www.localhost.com/",
+          "logo": "https://www.localhost.com/logo.png"
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+          "@@context": "https://schema.org/",
+          "@@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@@type": "ListItem",
+            "position": 1,
+            "name": "HomePage",
+            "item": "https://www.localhost.com/"
+          },{
+            "@@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://www.localhost.com/about-us/"
+          },{
+            "@@type": "ListItem",
+            "position": 3,
+            "name": "Contact",
+            "item": "https://www.localhost.com/contact-us/"
+          },{
+            "@@type": "ListItem",
+            "position": 4,
+            "name": "Privacy",
+            "item": "https://www.localhost.com/privacy/"
+          }]
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+          "@@context": "https://schema.org",
+          "@@type": "FAQPage",
+          "mainEntity": [{
+            "@@type": "Question",
+            "name": "Why do we use it? ☑️",
+            "acceptedAnswer": {
+              "@@type": "Answer",
+              "text": "<p><strong>It is a long</strong> established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>"
+            }
+          }, {
+            "@@type": "Question",
+            "name": "Where can I get some? ☑️",
+            "acceptedAnswer": {
+              "@@type": "Answer",
+              "text": "<p>There are many variations of passages of Lorem Ipsum available <br /><b>but the majority</b> have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly <br/>If you are going to use a passage of Lorem Ipsum, you</p>"
+            }
+          }]
+    </script>
+}
+
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="sticky-lg-top sticky-md-top sticky-xl-top">
+
+                @*components*@
+                <label for="exampleFormControlInput1" class="form-label fs-5">Lorem Ipsum</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control choice-input" aria-label="Text input with dropdown button" value="">
+                    <button class="btn btn-primary dropdown-toggle dropdown-button-choice" type="button" data-bs-toggle="dropdown" aria-expanded="false">Default Selection</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item file-size-dropdown-item" href="javascript:;">Choice 1</a></li>
+                        <li><a class="dropdown-item file-size-dropdown-item" href="javascript:;">Choice 2</a></li>
+                        <li><a class="dropdown-item file-size-dropdown-item" href="javascript:;">Default Selection</a></li>
+                        <li><a class="dropdown-item file-size-dropdown-item" href="javascript:;">Choice 3</a></li>
+                        <li><a class="dropdown-item file-size-dropdown-item" href="javascript:;">Choice 4</a></li>
+                    </ul>
+                </div>
+
+                <div class="text-center">
+                    <a href="javascript:resultShowProgressBar();" class="link-danger fs-5">Start Progress Bar</a>
+                </div>
+                <br />
+
+                <div class="d-none resultProgressBar">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                    </div>
+                    <div class="alert alert-success answer-alert" role="alert">Completed Progress Bar</div>
+                    <br />
+                </div>
+
+                <div class="text-center d-grid gap-3 d-md-block">
+                    <input class="btn btn-primary btn-lg" id="calculate" type="submit" value="Button">
+                    <input class="btn btn-primary btn-lg" id="reset" type="reset" value="Reset">
+                </div>
+                <br />
+                <div class="inputValidation alert alert-danger d-none" role="alert">
+                    * All fields must be filled.
+                    <br />
+                    * Must be value greater than 0.
+                </div>
+                <div class="text-center d-none resultLoading">
+                    <div class="spinner-border text-primary" role="status"></div>
+                    <p class="mg-top-7px">Loading...</p>
+                </div>
+                <br />
+                @*components*@
+
+            </div>
+        </div>
+
+
+        <div class="col-lg-6">
+            <h1 class="text-center">Lorem Ipsum</h1>
+            <br />
+            <div id="toc_container">
+                <p class="toc_title">Contents</p>
+                <ul class="toc_list">
+                    <li><a href="#lorem-ipsum-available">Lorem Ipsum Available</a></li>
+                    <li><a href="#why-do-we-use-it">Why Do We Use It?</a></li>
+                    <li><a href="#where-can-i-get-some">Where Can I Get Some?</a></li>
+                </ul>
+            </div>
+
+            <p>
+                <strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            </p>
+            <br />
+
+            <table class="table table-dark table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">File Size</th>
+                        <th scope="col">Upload Speed</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10 Mb</td>
+                        <td>10 Mbps</td>
+                        <td>0 Minutes 8 Seconds (1.25 MB/sec)</td>
+                    </tr>
+                    <tr>
+                        <td>100 Mb</td>
+                        <td>20 Mbps</td>
+                        <td>0 Minutes 40 Seconds (2.5 MB/sec)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <h2 id="lorem-ipsum-available" class="text-center">Lorem Ipsum Available</h2>
+            <p>
+                <strong>Lorem ipsum available </strong>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC
+            </p>
+            <p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
+            <br />
+
+
+            <h3 id="why-do-we-use-it">Why Do We Use It? ☑️</h3>
+            <p><strong>It is a long</strong> established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+
+            <h3 id="where-can-i-get-some">Where Can I Get Some? ☑️</h3>
+            <p>
+                There are many variations of passages of Lorem Ipsum available <br />
+                <b>but the majority</b> have suffered alteration in some form, by injected
+                humour, or randomised words which don't look even slightly <br />
+                If you are going to use a passage of Lorem Ipsum, you
+            </p>
+        </div>
+    </div>
