@@ -9,7 +9,42 @@
 
     @RenderSection("header", false)
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Load after 2 sec -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { setTimeout(initGTM, 2000); });
+
+        function initGTMOnEvent(event) {
+            initGTM();
+            event.currentTarget.removeEventListener(event.type, initGTMOnEvent);
+        }
+
+        // Initializes
+        function initGTM() {
+            if (window.gtmDidInit) {
+                // Don't load again
+                return false;
+            }
+
+            window.gtmDidInit = true;
+
+            // Create the script
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.onload = () => {
+
+                //Gtag, Metrica code etc.
+
+            }
+
+            // We are still deferring the script
+            script.defer = true;
+
+            // Append the script to the body of the document
+            document.getElementsByTagName('body')[0].appendChild(script);
+        }
+
+    </script>
+    <!-- /Load after 2 sec -->
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
